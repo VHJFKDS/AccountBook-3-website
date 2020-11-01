@@ -6,7 +6,7 @@
                 &&selectedTags.indexOf(tag)<1}"
                 @click="toggle(tag)">
                  <div class="tmd" v-if="tag.name">
-                    <Icon :name="tag.name"/>
+                    <Icon :name="tag.name" class="tagsIcon"/>
                 </div>
                 <span class="tmd2">{{tag.name}}</span>
             </li>
@@ -46,65 +46,40 @@
 </script>
 
 <style lang="scss" scoped>
+
     .tags {
-        background: white;
-        flex-grow: 1;
-        font-size: 16px;
-        padding: 16px;
-        display: flex;
-
+     font-size: 14px;
+     padding: 12px 5px;
+     height: 43%;
+     overflow: auto;
         > .current {
-            overflow: scroll;
-            display: flex;
-            flex-wrap: wrap;
-
+           display: flex;
+           flex-wrap: wrap;
+           flex-direction: column;
+           height: 100%;
+           text-align: center;
             > li {
-                box-sizing: border-box;
-                position: relative;
-                height: 62px;
-                width: 20%;
-                padding: 0 30px;
-                margin-right: 12px;
-                margin-top: 10px;
-                justify-content: space-between;
-
-                > .tmd {
-                    justify-content: center;
-                    text-align: center;
-                    align-items: center;
-                    position: absolute;
-                    font-size: 39px;
-                    transform: translate(-1px, -9px);
-                }
-
-                > .tmd2 {
-                    position: absolute;
-                    font-size: 13px;
-                    transform: translateY(42px) translateX(5px);
-                }
-
-                &.selected {
-                    color: orangered;
-                }
+                width:20%;
+                border-radius: 12px;
+                padding: 1px 8px;
+                margin: 2px 8px;
+             &.selected{
+                background: #A0DECF;
+                border: 2px solid #9BCAC2;
+             }
+               
             }
         }
 
-        > .new {
-            padding-top: 16px;
-            margin-left: -8px;
-        }
+        
     }
+.tmd{
+   .tagsIcon{
+    width: 40px;
+    height: 40px;
+}
+}
 
-    .zhaopai {
-        margin-top: -10px;
-        margin-bottom: 36px;
-        color: deeppink;
-
-        > .zhaopai2 {
-            font-size: 22px;
-            color: red;
-            transform: translateX(-4px);
-        }
-    }
+    
 
 </style>

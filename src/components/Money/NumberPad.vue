@@ -2,20 +2,31 @@
     <div class="numberPad">
         <div class="output">{{output}}</div>
         <div class="buttons">
-            <button class="btn" @click="inputContent">1</button>
-            <button class="btn" @click="inputContent">2</button>
-            <button class="btn" @click="inputContent">3</button>
-            <button class="btn" id="btn1" @click="remove"><Icon name="退格"/></button>
+            <div class="number">
+               <button class="btn" @click="inputContent">1</button>
+               <button class="btn" @click="inputContent">2</button>
+               <button class="btn" @click="inputContent">3</button>
+
             <button class="btn" @click="inputContent">4</button>
             <button class="btn" @click="inputContent">5</button>
             <button class="btn" @click="inputContent">6</button>
-            <button class="btn" @click="clear">清空</button>
+
             <button class="btn" @click="inputContent">7</button>
             <button class="btn" @click="inputContent">8</button>
             <button class="btn" @click="inputContent">9</button>
-            <button class="btn" @click="ok" id="ok">OK</button>
+
+            <button class="btn" @click="clear">清空</button>
             <button class="btn" @click="inputContent" id="zero">0</button>
             <button class="btn" @click="inputContent"><strong>.</strong></button>
+
+            </div>
+
+            <div class="tool">
+            <button class="day">day</button>
+            <button class="btn" id="btn1" @click="remove"><Icon name="退格"/></button>         
+            <button class="btn" @click="ok" id="ok">OK</button>
+            </div>
+            
         </div>
     </div>
 </template>
@@ -77,27 +88,38 @@
     @import "~@/assets/style/reset.scss";
 
     .numberPad {
-        .output {
-            @extend %clearFix;
-            @extend %innerShadow;
-            font-size: 24px;
-            font-family: Consolas, monospace; //monospace等宽字体
-            padding: 3px 16px;
-            margin-right: 6px;
-            text-align: right;
-            height: 36px;
-        }
-        #btn1{
-            font-size: 26px;
-        }
+        background: #9bcac2;
+        padding: 14px 8px;
+        border-top: 2px solid black;
+        height: 52%;
+        // .output {
+        //     @extend %clearFix;
+        //     @extend %innerShadow;
+        //     font-size: 24px;
+        //     font-family: Consolas, monospace; //monospace等宽字体
+        //     padding: 3px 16px;
+        //     margin-right: 6px;
+        //     text-align: right;
+        //     height: 36px;
+        // }
+        // #btn1{
+        //     font-size: 26px;
+        // }
         .buttons {
             @extend %clearFix; //如果子元素用到了float布局，父元素必须加上clearFix属性
+            margin-top: 5px;
+            display: flex;
+            height: 100%;
             > button {
+                width: 30%;
+                height: 17%;
                 float: left;
-                width: 25%;
-                height: 7vh;
-                background: transparent;
-                border: none;
+                border: 2px solid black;
+                background: white;
+                border-radius:10px ;
+                margin: 1%;
+                font-family:UD Digi Kyokasho NP-B;
+                font-size: 20px;
 
                 &#ok {
                     height: 14vh;
@@ -115,33 +137,7 @@
 
                 $bg: #f2f2f2;
 
-                &:nth-child(1) {
-                    background: $bg;
-                }
-
-                &:nth-child(2), &:nth-child(5) {
-                    background: darken($bg, 4%);
-                }
-
-                &:nth-child(3), &:nth-child(6), &:nth-child(9) {
-                    background: darken($bg, 4*2%);
-                }
-
-                &:nth-child(4), &:nth-child(7), &:nth-child(10) {
-                    background: darken($bg, 4*3%);
-                }
-
-                &:nth-child(8), &:nth-child(11), &:nth-child(13) {
-                    background: darken($bg, 4*4%);
-                }
-
-                &:nth-child(14) {
-                    background: darken($bg, 4*5%);
-                }
-
-                &:nth-child(12) {
-                    background: darken($bg, 4*6%);
-                }
+                
             }
         }
     }

@@ -1,18 +1,18 @@
 <template>
-    <Layout class-prefix="layout">
-        <NumberPad :value.sync="record.amount" @submit="saveRecord"/>
-        <div class="notes">
+<div class="container">
+    <Tabs :data-source="recordTypeList"
+              :value.sync="record.type"
+        />  
+    <Tags @update:value="record.tags=$event"/>
+    <div class="notes">
             <Icon class="notes-svg" name="备注"/>
             <FormItem field-name="备注" :value.sync="record.notes"
                       placeholder="可以写点东西吖~"/>
         </div>
-        <Tags @update:value="record.tags=$event"/>
-        <Tabs :data-source="recordTypeList"
-              :value.sync="record.type"
-        />
+    <NumberPad :value.sync="record.amount" @submit="saveRecord"/>
         
-    </Layout>
-    
+           
+    </div>
 </template>
 
 <script lang="ts">
@@ -64,17 +64,13 @@
 
 <style lang="scss">
     //空格.是tags里面的，没有.是当前tags
-    .layout-content {
-        display: flex;
-        flex-direction: column-reverse
+    .container{
+        height: 100vh;
     }
-
     .notes {
         padding-left: 10px;
         display: flex;
         background:snow;
-
-
     > .notes-svg {
 
         transform: translateY(12px);
