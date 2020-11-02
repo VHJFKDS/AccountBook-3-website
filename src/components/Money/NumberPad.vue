@@ -15,16 +15,15 @@
             <button class="btn" @click="inputContent">8</button>
             <button class="btn" @click="inputContent">9</button>
 
-            <button class="btn" @click="clear">清空</button>
             <button class="btn" @click="inputContent" id="zero">0</button>
             <button class="btn" @click="inputContent"><strong>.</strong></button>
 
             </div>
 
             <div class="tool">
-            <button class="day">day</button>
-            <button class="btn" id="btn1" @click="remove"><Icon name="退格"/></button>         
-            <button class="btn" @click="ok" id="ok">OK</button>
+            <button class="remove" id="btn1" @click="remove"><Icon name="退格"/></button>         
+            <button class="clear" @click="clear">清空</button>
+            <button class="ok" @click="ok" id="ok">OK</button>
             </div>
             
         </div>
@@ -91,26 +90,29 @@
         background: #9bcac2;
         padding: 14px 8px;
         border-top: 2px solid black;
-        height: 52%;
-        // .output {
-        //     @extend %clearFix;
-        //     @extend %innerShadow;
-        //     font-size: 24px;
-        //     font-family: Consolas, monospace; //monospace等宽字体
-        //     padding: 3px 16px;
-        //     margin-right: 6px;
-        //     text-align: right;
-        //     height: 36px;
-        // }
-        // #btn1{
-        //     font-size: 26px;
-        // }
+        height: 48%;
+        font-family: UD Digi Kyokasho NP-B,Consolas, monospace; 
+        
+        .output {
+            @extend %clearFix;
+            @extend %innerShadow;
+            font-size: 24px;
+            padding: 3px 16px;
+            text-align: right;
+            line-height: 32px;
+            border: 2px solid black;
+            border-radius: 10px;
+            background-color: white;
+        }
+        
         .buttons {
-            @extend %clearFix; //如果子元素用到了float布局，父元素必须加上clearFix属性
+            @extend %clearFix; 
             margin-top: 5px;
             display: flex;
             height: 100%;
-            > button {
+            .number{
+                width: 74%;
+               & .btn{
                 width: 30%;
                 height: 17%;
                 float: left;
@@ -118,27 +120,43 @@
                 background: white;
                 border-radius:10px ;
                 margin: 1%;
-                font-family:UD Digi Kyokasho NP-B;
                 font-size: 20px;
-
-                &#ok {
-                    height: 14vh;
-                    float: right;
-                }
-
                 &.btn:active {
                     background: rosybrown;
-
                 }
-
                 &#zero {
-                    width: 25*2%;
+                    width: 31*2%;
                 }
+              
+            }   
+            
 
-                $bg: #f2f2f2;
-
-                
             }
         }
     }
+.tool{
+    width: 25%;
+    > button{
+      border: 2px solid black;
+      background: white;
+      border-radius:10px ;
+      width: 100%;
+      margin: 3%;
+      font-size: 20px;
+      &#ok {
+          height: 37%;
+          
+      }
+      &.clear,&.remove{
+         height: 17%;
+      }
+    >.icon{
+    width: 45px;
+    height: 35px;   
+
+    }
+    
+}
+}
+
 </style>

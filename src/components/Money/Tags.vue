@@ -63,6 +63,7 @@
                 border-radius: 12px;
                 padding: 1px 8px;
                 margin: 2px 8px;
+                border: 2px solid #f5f5f5;
              &.selected{
                 background: #A0DECF;
                 border: 2px solid #9BCAC2;

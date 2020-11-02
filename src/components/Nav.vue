@@ -1,10 +1,10 @@
 <template>
     <nav>
-        <router-link to="/money" class="item" active-class="selected">记账
-            <Icon name="money"/>
-        </router-link>
         <router-link to="/statistics" class="item" active-class="selected">明细
             <Icon name="statistics"/>
+        </router-link>
+        <router-link to="/money" class="item" active-class="selected">记账
+            <Icon name="money"/>
         </router-link>
         <router-link to="/chart" class="item" active-class="selected">图表
             <Icon name="chart"/>
@@ -28,7 +28,7 @@ nav {
     font-size: 12px;
 
     > .item {
-        height: 50px;
+        height: 55px;
         padding: 2px 0;
         width: 33.3333333%;
         display: flex;
@@ -43,7 +43,7 @@ nav {
     }
 
     > .item.selected {
-        color: $color-highlight;
+        color: #9bcac2;
     }
 
     //router-link标签被选中时变色

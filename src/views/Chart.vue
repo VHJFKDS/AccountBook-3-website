@@ -116,8 +116,8 @@
                 const handleTypeList = {
                     week: () => {
                         newArr = [];
-                        let o = [];
-                        let xxx = dayJs()
+                        const o = [];
+                        const xxx = dayJs()
                             .startOf("week")
                             .add(1, "day");
                         for (let i = 0; i < 7; i++) {
@@ -171,7 +171,7 @@
                         this.lineData = payOrIncomeList;
                     },
                     month: () => {
-                        let newArr2 = [];
+                        const newArr2 = [];
                         newArr = [];
                         allRecord.map(v => {
                             dayJs(v.createTime).year() === dayJs(new Date()).year() &&
@@ -181,7 +181,7 @@
                             dayJs(v.createTime).month() === dayJs(new Date()).month() &&
                             newArr.push(v);
                         }); //筛选出账单类别中所有属于本月的账单newArr
-                        let tempPieData = {};
+                        const tempPieData = {};
                         newArr.map(value => {
                             if (value.type === type) {
                                 let valueType = value.type;
@@ -313,25 +313,26 @@
 </script>
 
 <style lang="scss" scoped>
-    $base-color: rgb(255, 218, 71);
+    $base-color:#9bcac2;
     .class-wrapper {
         font-size: 14px;
         padding: 10px 0 3px 35px;
         div {
-            color: #999;
+            color: #333;
         }
     }
     .top-bar {
         background-color: $base-color;
         padding: 11px 0;
+        color: #f5f5f5;
         .type {
             text-align: center;
             margin-bottom: 10px;
             span {
-                border: 1px #333 solid;
+                border: 1px#f5f5f5 solid;
                 padding: 5px;
                 &.active {
-                    background-color: #333;
+                    background-color: #f5f5f5;
                     color: $base-color;
                 }
             }
@@ -350,9 +351,9 @@
         text-align: center;
         li {
             width: 33.3333%;
-            border: 1px #333 solid;
+            border: 1px #f5f5f5 solid;
             &.active {
-                background-color: #333;
+                background-color: #f5f5f5;
                 color: $base-color;
             }
         }
