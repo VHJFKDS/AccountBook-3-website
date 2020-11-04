@@ -293,13 +293,14 @@
             recordList() {
                 return this.$store.state.recordList;
             },
-            pingjunshu() {
+            pingjunshu(){
                 if (this.companyDate === "week")
                     return parseFloat(this.totalAmount / 7).toFixed(2);
                 if (this.companyDate === "month")
                     return parseFloat(this.totalAmount / 31).toFixed(2);
                 if (this.companyDate === "year")
                     return parseFloat(this.totalAmount / 12).toFixed(2);
+                    
             }
         },
         mounted() {

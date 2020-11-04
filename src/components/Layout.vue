@@ -19,7 +19,8 @@
     .layout-wrapper {
         display: flex;
         flex-direction: column;
-        max-height: 100vh;
+        height: 100vh;
+        
     }
 
     .content {
