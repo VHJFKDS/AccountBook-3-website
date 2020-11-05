@@ -50,7 +50,7 @@
     .tags {
      font-size: 14px;
      padding: 12px 5px;
-     height: 43%;
+     height: 37%;
      overflow: auto;
         > .current {
            display: flex;

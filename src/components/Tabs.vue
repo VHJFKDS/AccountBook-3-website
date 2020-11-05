@@ -18,7 +18,7 @@
     export default class Tabs extends Vue {
         @Prop({required: true, type: Array})
         dataSource!: DataSourceItem[]
-        @Prop({type: String, default: '48px'})
+        @Prop({type: String, default: '40px'})
         height!: string
         @Prop(String) readonly value!: string
         @Prop(String) classPrefix?: string
@@ -61,7 +61,7 @@
                 width: 90%;
                 height: 0.1em;
                 background: white;
-                top: 72%;
+                top: 69%;
                 left: 5%;
             }
         }

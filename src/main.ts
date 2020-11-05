@@ -33,7 +33,7 @@ window.onload = function () {
 if (document.documentElement.clientWidth > 500) {
     window.alert('请使用手机打开，以保证浏览效果')
     const img = document.createElement('img')
-    img.src = 'https://i.loli.net/2020/11/04/6sGotCNPcZwTziq.png'
+    img.src = 'https://i.loli.net/2020/11/05/iTXlLHtKMax4fmA.png'
     img.style.position = 'fixed'
     img.style.top = '26%'
     img.style.left = '50%'

@@ -315,6 +315,7 @@
 
 <style lang="scss" scoped>
     $base-color:#9bcac2;
+     
     .class-wrapper {
         font-size: 14px;
         padding: 10px 0 3px 35px;

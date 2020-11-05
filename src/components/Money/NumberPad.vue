@@ -90,7 +90,7 @@
         background: #9bcac2;
         padding: 14px 8px;
         border-top: 2px solid black;
-        height: 48%;
+        height: 50%;
         font-family: UD Digi Kyokasho NP-B,Consolas, monospace; 
         
         .output {
